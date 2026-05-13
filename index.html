@@ -97,6 +97,52 @@
     /* PROJECT SECTION */
     .project {
         display: flex;
+        align-items: flex-start;
+        gap: 25px;
+        margin-bottom: 60px;
+      }
+      
+      .project-image {
+        flex-shrink: 0;
+      }
+      
+      .project-img {
+        width: 220px;
+        border-radius: 12px;
+        box-shadow: 0px 0px 12px rgba(0,0,0,0.4);
+      }
+      
+      .project-content {
+        flex: 1;
+      }
+      
+      .project-content h3 {
+        color: #38bdf8;
+        margin-top: 0;
+        margin-bottom: 12px;
+        font-size: 26px;
+      }
+      
+      .project-content p {
+        line-height: 1.8;
+        margin-bottom: 15px;
+        text-align: left;
+        max-width: 650px;
+      }
+      
+      .project-links a {
+        color: #38bdf8;
+        font-weight: bold;
+        margin-right: 20px;
+        text-decoration: none;
+      }
+      
+      .project-links a:hover {
+        color: white;
+      }
+    
+   /* .project {
+        display: flex;
         gap: 40px;
         margin-bottom: 80px;
         align-items: flex-start;
@@ -148,42 +194,7 @@
       
       .project-links a:hover {
         color: white;
-      }
-    /*.project {
-      display: flex;
-      gap: 30px;
-      margin-bottom: 60px;
-      align-items: center;
-    }
-    
-    .project-img {
-      width: 320px;
-      border-radius: 12px;
-      box-shadow: 0px 0px 12px rgba(0,0,0,0.4);
-    }
-    
-    .project-info {
-      flex: 1;
-    }
-    
-    .project-info h3 {
-      color: #38bdf8;
-      margin-bottom: 15px;
-    }
-    
-    .project-info p {
-      line-height: 1.8;
-    }
-    
-    .project-links a {
-      color: #38bdf8;
-      font-weight: bold;
-      margin-right: 15px;
-    }
-    
-    .project-links a:hover {
-      color: white;
-    }*/
+      }*/
 
   </style>
 </head>
@@ -278,11 +289,44 @@
     <h2>Projects</h2>
 
 <!-- PROJECT 1 -->
+<div class="project">
 
-    <div class="project">
+  <!-- LEFT IMAGE -->
+  <div class="project-image">
+    <img src="telerobotics.png" class="project-img">
+  </div>
+
+  <!-- RIGHT CONTENT -->
+  <div class="project-content">
+
+    <h3>Telerobotics System</h3>
+
+    <p>
+      Developed a real-time telerobotics system for remote robotic operation and control.
+      The project integrates robotic motion control, real-time communication, and simulation
+      technologies for precise remote interaction.
+    </p>
+
+    <div class="project-links">
+
+      <a href="https://www.youtube.com/watch?v=E_97b3YhJoM" target="_blank">
+        ▶ YouTube Demo
+      </a>
+
+      <a href="https://github.com/MannanKhan-mk" target="_blank">
+        GitHub
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+ <!-- <div class="project">
 
   <!-- LEFT SIDE -->
-  <div class="project-info">
+ <!-- <div class="project-info">
 
     <h3>Telerobotics System</h3>
 
@@ -300,7 +344,7 @@
   </div>
 
   <!-- RIGHT SIDE -->
-  <div class="project-media">
+<!--  <div class="project-media">
 
     <img src="telerobotics.png" class="project-img">
 
@@ -322,7 +366,7 @@
 
   </div>
 
-</div>
+</div> -->
 <!--<div class="project">
 
   <img src="telerobotics.png" class="project-img">
