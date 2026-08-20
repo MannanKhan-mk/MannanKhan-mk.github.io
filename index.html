@@ -159,6 +159,284 @@
         margin: 25px 0;
       }
 
+    /* ================================
+         ROBOT HOLOGRAM
+      ================================ */
+      
+      .hologram {
+          position: relative;
+      
+          width: 280px;
+          height: 300px;
+      
+          margin: 35px auto 0;
+      
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      
+          overflow: hidden;
+      
+          perspective: 800px;
+      }
+      
+      
+      /* ROBOT */
+      
+      .hologram-robot {
+          position: absolute;
+      
+          width: 220px;
+      
+          bottom: 45px;
+      
+          z-index: 3;
+      
+          opacity: 0.85;
+      
+          mix-blend-mode: screen;
+      
+          filter:
+              brightness(1.4)
+              contrast(1.2)
+              drop-shadow(0 0 10px #38bdf8)
+              drop-shadow(0 0 25px rgba(56,189,248,0.7));
+      
+          animation:
+              hologramFloat 3s ease-in-out infinite,
+              hologramFlicker 4s infinite;
+      }
+      
+      
+      /* FLOATING ROBOT */
+      
+      @keyframes hologramFloat {
+      
+          0% {
+              transform: translateY(0px);
+          }
+      
+          50% {
+              transform: translateY(-10px);
+          }
+      
+          100% {
+              transform: translateY(0px);
+          }
+      
+      }
+      
+      
+      /* HOLOGRAM FLICKER */
+      
+      @keyframes hologramFlicker {
+      
+          0%,
+          100% {
+              opacity: 0.85;
+          }
+      
+          45% {
+              opacity: 0.85;
+          }
+      
+          46% {
+              opacity: 0.55;
+          }
+      
+          47% {
+              opacity: 0.9;
+          }
+      
+          48% {
+              opacity: 0.65;
+          }
+      
+          49% {
+              opacity: 0.85;
+          }
+      }
+      
+      
+      /* HOLOGRAM PLATFORM */
+      
+      .hologram-ring {
+      
+          position: absolute;
+      
+          border: 2px solid #38bdf8;
+      
+          border-radius: 50%;
+      
+          bottom: 28px;
+      
+          left: 50%;
+      
+          transform: translateX(-50%);
+      
+          box-shadow:
+              0 0 10px rgba(56,189,248,0.8),
+              inset 0 0 10px rgba(56,189,248,0.3);
+      
+      }
+      
+      
+      /* MAIN RING */
+      
+      .ring-1 {
+      
+          width: 210px;
+          height: 55px;
+      
+          animation:
+              ringRotate 8s linear infinite;
+      
+      }
+      
+      
+      /* SECOND RING */
+      
+      .ring-2 {
+      
+          width: 170px;
+          height: 45px;
+      
+          opacity: 0.6;
+      
+          animation:
+              ringRotateReverse 5s linear infinite;
+      
+      }
+      
+      
+      /* ROTATING RINGS */
+      
+      @keyframes ringRotate {
+      
+          0% {
+              transform:
+                  translateX(-50%)
+                  rotateX(65deg)
+                  rotateZ(0deg);
+          }
+      
+          100% {
+              transform:
+                  translateX(-50%)
+                  rotateX(65deg)
+                  rotateZ(360deg);
+          }
+      
+      }
+      
+      
+      @keyframes ringRotateReverse {
+      
+          0% {
+              transform:
+                  translateX(-50%)
+                  rotateX(65deg)
+                  rotateZ(360deg);
+          }
+      
+          100% {
+              transform:
+                  translateX(-50%)
+                  rotateX(65deg)
+                  rotateZ(0deg);
+          }
+      
+      }
+      
+      
+      /* SCANNING LINE */
+      
+      .scan-line {
+      
+          position: absolute;
+      
+          left: 30px;
+          right: 30px;
+      
+          height: 2px;
+      
+          background: #38bdf8;
+      
+          opacity: 0.5;
+      
+          filter:
+              blur(1px)
+              drop-shadow(0 0 6px #38bdf8);
+      
+          z-index: 5;
+      
+          animation: scan 3s linear infinite;
+      
+      }
+      
+      
+      @keyframes scan {
+      
+          0% {
+              top: 30px;
+              opacity: 0;
+          }
+      
+          10% {
+              opacity: 0.7;
+          }
+      
+          50% {
+              opacity: 0.4;
+          }
+      
+          90% {
+              opacity: 0.7;
+          }
+      
+          100% {
+              top: 270px;
+              opacity: 0;
+          }
+      
+      }
+      
+      
+      /* HOLOGRAPHIC FLOOR */
+      
+      .hologram-grid {
+      
+          position: absolute;
+      
+          width: 220px;
+          height: 80px;
+      
+          bottom: 5px;
+      
+          border-radius: 50%;
+      
+          background:
+              repeating-linear-gradient(
+                  90deg,
+                  transparent 0px,
+                  transparent 15px,
+                  rgba(56,189,248,0.15) 16px
+              ),
+              repeating-linear-gradient(
+                  0deg,
+                  transparent 0px,
+                  transparent 15px,
+                  rgba(56,189,248,0.15) 16px
+              );
+      
+          transform:
+              perspective(300px)
+              rotateX(60deg);
+      
+          opacity: 0.6;
+      
+      }
+
   </style>
 </head>
 
@@ -204,6 +482,22 @@
       <a href="https://x.com/" target="_blank">
         <i class="fab fa-x-twitter"></i>
       </a>
+    </div>
+
+      <!-- ROBOT HOLOGRAM -->
+    <div class="hologram">
+    
+      <div class="hologram-grid"></div>
+    
+      <div class="hologram-ring ring-1"></div>
+      <div class="hologram-ring ring-2"></div>
+    
+      <img src="robot-hologram.png"
+           class="hologram-robot"
+           alt="Robotics hologram">
+    
+      <div class="scan-line"></div>
+    
     </div>
 
   </div>
