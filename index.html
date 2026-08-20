@@ -165,11 +165,11 @@
       
       .hologram {
           position: relative;
+
+          width: 240px;
+          height: 230px;
       
-          width: 280px;
-          height: 300px;
-      
-          margin: 35px auto 0;
+          margin: 25px auto 0;
       
           display: flex;
           align-items: center;
@@ -180,33 +180,30 @@
           perspective: 800px;
       }
       
-      
       /* ROBOT */
-      
       .hologram-robot {
-          position: absolute;
-      
-          width: 220px;
-      
-          bottom: 45px;
-      
-          z-index: 3;
-      
-          opacity: 0.85;
-      
-          mix-blend-mode: screen;
-      
-          filter:
-              brightness(1.4)
-              contrast(1.2)
-              drop-shadow(0 0 10px #38bdf8)
-              drop-shadow(0 0 25px rgba(56,189,248,0.7));
-      
-          animation:
-              hologramFloat 3s ease-in-out infinite,
-              hologramFlicker 4s infinite;
+            position: absolute;
+
+            width: 145px;          /* smaller robot */
+        
+            bottom: 35px;
+        
+            z-index: 3;
+        
+            opacity: 0.85;
+        
+            mix-blend-mode: screen;
+        
+            filter:
+                brightness(1.4)
+                contrast(1.2)
+                drop-shadow(0 0 8px #38bdf8)
+                drop-shadow(0 0 18px rgba(56,189,248,0.7));
+        
+            animation:
+                hologramFloat 3s ease-in-out infinite,
+                hologramFlicker 4s infinite;
       }
-      
       
       /* FLOATING ROBOT */
       
@@ -285,7 +282,7 @@
       
       .ring-1 {
       
-          width: 210px;
+          width: 150px;
           height: 55px;
       
           animation:
